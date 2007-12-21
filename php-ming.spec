@@ -14,6 +14,7 @@ BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	libming-devel
 Provides:	php5-ming
 Obsoletes:	php5-ming
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 This is a dynamic shared object (DSO) for PHP that will add ming (Flash - .swf
