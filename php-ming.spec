@@ -5,16 +5,18 @@
 
 Summary:	Ming extension module for PHP
 Name:		php-ming
-Version:	5.2.3
+Version:	5.2.10
 Release:	%mkrel 1
 Group:		Development/PHP
 URL:		http://www.php.net
 License:	PHP License
+# S0 is taken from php-5.2.x CVS
+Source0:	ming.tar.gz
+Patch0:		php-ming-0.4.2.diff
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	libming-devel
-Provides:	php5-ming
-Obsoletes:	php5-ming
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+Epoch:		0
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This is a dynamic shared object (DSO) for PHP that will add ming (Flash - .swf
@@ -22,8 +24,8 @@ files) support.
 
 %prep
 
-%setup -c -T
-cp -dpR %{_usrsrc}/php-devel/extensions/%{dirname}/* .
+%setup -n ming
+%patch0 -p1
 
 %build
 
@@ -35,7 +37,7 @@ phpize
 mv modules/*.so .
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot} 
+rm -rf %{buildroot} 
 
 
 install -d %{buildroot}%{_libdir}/php/extensions
@@ -48,12 +50,11 @@ extension = %{soname}
 EOF
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root)
 %doc CREDITS EXPERIMENTAL
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
-
 
