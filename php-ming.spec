@@ -6,7 +6,7 @@
 Summary:	Ming extension module for PHP
 Name:		php-ming
 Version:	5.2.10
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Development/PHP
 URL:		http://www.php.net
 License:	PHP License
