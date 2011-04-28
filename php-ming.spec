@@ -6,16 +6,16 @@
 Summary:	Ming extension module for PHP
 Name:		php-ming
 Version:	5.2.10
-Release:	%mkrel 11
+Release:	%mkrel 12
 Group:		Development/PHP
 URL:		http://www.php.net
 License:	PHP License
 # S0 is taken from php-5.2.x CVS
 Source0:	ming.tar.gz
-Patch0:		php-ming-0.4.2.diff
+Patch0:		php-ming-0.4.3.diff
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	libming-devel
-Epoch:		0
+Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -24,7 +24,7 @@ files) support.
 
 %prep
 
-%setup -n ming
+%setup -q -n ming
 %patch0 -p1
 
 %build
@@ -57,4 +57,3 @@ rm -rf %{buildroot}
 %doc CREDITS EXPERIMENTAL
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
-
