@@ -14,7 +14,7 @@ License:	PHP License
 Source0:	ming.tar.gz
 Patch0:		php-ming-0.4.3.diff
 BuildRequires:	php-devel >= 3:5.2.0
-BuildRequires:	libming-devel
+BuildRequires:	ming-devel >= 0.4.3
 Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
