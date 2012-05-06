@@ -12,9 +12,10 @@ URL:		http://www.php.net
 License:	PHP License
 # S0 is taken from php-5.2.x CVS
 Source0:	ming.tar.gz
-Patch0:		php-ming-0.4.3.diff
+Patch0:		php-ming-0.4.4.diff
+Patch1:		ming-php54x.diff
 BuildRequires:	php-devel >= 3:5.2.0
-BuildRequires:	ming-devel >= 0.4.3
+BuildRequires:	ming-devel >= 0.4.4
 Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -26,6 +27,7 @@ files) support.
 
 %setup -q -n ming
 %patch0 -p1
+%patch1 -p0
 
 %build
 
