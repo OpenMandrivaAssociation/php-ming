@@ -8,7 +8,7 @@ Name:		php-ming
 Version:	5.2.10
 Release:	17
 Group:		Development/PHP
-URL:		http://www.php.net
+URL:		https://www.php.net
 License:	PHP License
 # S0 is taken from php-5.2.x CVS
 Source0:	ming.tar.gz
